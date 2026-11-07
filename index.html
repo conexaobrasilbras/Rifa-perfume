@@ -122,6 +122,11 @@
             align-items: center;
         }
 
+        .number-link {
+            width: 100%;
+            text-decoration: none;
+        }
+
         .number {
             background: linear-gradient(135deg, #f8e9a1, #f0d896);
             color: #8b6508;
@@ -140,6 +145,7 @@
             background: #b8860b;
             color: #fff;
             cursor: pointer;
+            transform: scale(1.05);
         }
 
         .number.vendido {
@@ -262,6 +268,8 @@
             <br>
             <p><strong>⚠️ Mínimo de vendas:</strong> É necessário vender no mínimo 48 números para realizar o sorteio na data prevista. Se não atingir a meta até 12/12/2026, o sorteio será prorrogado até alcançar os 48 números vendidos.</p>
             <br>
+            <p><strong>📝 Após o pagamento:</strong> Envie o comprovante de pagamento no Grupo Oficial do WhatsApp informando o número escolhido. Assim que confirmado, seu nome será vinculado ao número!</p>
+            <br>
             <p><strong>🎯 Números disponíveis:</strong> 66 números (01 a 66)</p>
             <p><strong>💳 Pagamento seguro:</strong> Feito através da plataforma InfinitePay, com garantia de estorno e suporte oficial.</p>
         </div>
@@ -270,20 +278,21 @@
         <div class="info-box">
             <h3>📋 Como Participar</h3>
             <ul>
-                <li>🔹 Clique em "Escolher Número e Pagar"</li>
+                <li>🔹 Clique em cima de qualquer número disponível</li>
                 <li>🔹 Valor: R$ 10,00 por número</li>
-                <li>🔹 Guarde o comprovante de pagamento</li>
-                <li>🔹 Clique no botão abaixo para enviar o comprovante pelo WhatsApp ✅</li>
-                <li>🔹 Clique no botão abaixo para entrar no grupo e acompanhar tudo!</li>
+                <li>🔹 Conclua o pagamento na plataforma InfinitePay</li>
+                <li>🔹 Guarde o comprovante ✅</li>
+                <li>🔹 Entre no Grupo Oficial e envie o comprovante informando seu número escolhido!</li>
             </ul>
         </div>
 
         <!-- Números com Espaço para Nomes -->
         <div class="numbers-grid">
-            <h3>🔢 Números Disponíveis</h3>
+            <h3>🔢 Números Disponíveis — Clique no número desejado!</h3>
             <div class="grid" id="numeros">
                 <script>
                     const container = document.getElementById('numeros');
+                    const linkPagamento = "https://loja.infinitepay.io/anderson-jose-x38/stp5204-perfume-lattafa-pride-tharwah-gold-100";
                     
                     // 📝 COLOCAR NOMES AQUI — exemplo: nomesVendidos[59] = "Tia Rose"
                     const nomesVendidos = {
@@ -296,16 +305,23 @@
                         const nome = nomesVendidos[i] || "";
                         const isVendido = !!nomesVendidos[i];
                         
-                        container.innerHTML += `
-                            <div class="number-card">
-                                <div class="number ${isVendido ? 'vendido' : 'disponivel'}">
-                                    ${num}
+                        if (isVendido) {
+                            container.innerHTML += `
+                                <div class="number-card">
+                                    <div class="number vendido">${num}</div>
+                                    <div class="name-space vendido">${nome}</div>
                                 </div>
-                                <div class="name-space ${isVendido ? 'vendido' : ''}">
-                                    ${nome || "&nbsp;"}
+                            `;
+                        } else {
+                            container.innerHTML += `
+                                <div class="number-card">
+                                    <a href="${linkPagamento}" target="_blank" class="number-link">
+                                        <div class="number disponivel">${num}</div>
+                                    </a>
+                                    <div class="name-space">&nbsp;</div>
                                 </div>
-                            </div>
-                        `;
+                            `;
+                        }
                     }
                 </script>
             </div>
@@ -329,11 +345,8 @@
             <a href="https://loja.infinitepay.io/anderson-jose-x38/stp5204-perfume-lattafa-pride-tharwah-gold-100" target="_blank" class="btn btn-pagamento">
                 💰 Clique aqui para escolher seu número e pagar
             </a>
-            <a href="https://wa.me/5531985854150" target="_blank" class="btn btn-whatsapp">
-                📱 Clique aqui para enviar seu comprovante
-            </a>
-            <a href="https://chat.whatsapp.com/GdvVTs31oo1EXwExSQ3Ey2" target="_blank" class="btn btn-group">
-                👥 Clique aqui para entrar no grupo oficial
+            <a href="https://chat.whatsapp.com/GdvVTs31oo1EXwExSQ3Ey2" target="_blank" class="btn btn-whatsapp">
+                💬 Clique aqui para entrar no grupo e enviar o comprovante
             </a>
         </div>
 
