@@ -112,7 +112,7 @@
 
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(65px, 1fr));
             gap: 12px;
         }
 
@@ -121,11 +121,35 @@
             color: #8b6508;
             font-weight: bold;
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
-            height: 60px;
+            height: 70px;
             border-radius: 10px;
-            font-size: 1.1rem;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .number.disponivel:hover {
+            background: #b8860b;
+            color: #fff;
+            transform: scale(1.08);
+            cursor: pointer;
+        }
+
+        .number.vendido {
+            background: linear-gradient(135deg, #4ade80, #22c55e);
+            color: #fff;
+            cursor: not-allowed;
+            opacity: 0.9;
+        }
+
+        .vendido-tag {
+            font-size: 0.7rem;
+            background: rgba(0,0,0,0.15);
+            padding: 2px 6px;
+            border-radius: 4px;
+            margin-top: 3px;
         }
 
         .actions {
@@ -218,9 +242,11 @@
             <h3>📌 INFORMAÇÕES IMPORTANTES</h3>
             <p><strong>📅 Sorteio:</strong> 12 de dezembro de 2026</p>
             <br>
+            <p><strong>🎯 Onde será o sorteio:</strong> O sorteio será realizado oficialmente no nosso Grupo Oficial do WhatsApp!</p>
+            <br>
             <p><strong>⚠️ Mínimo de vendas:</strong> É necessário vender no mínimo 48 números para realizar o sorteio na data prevista. Se não atingir a meta até 12/12/2026, o sorteio será prorrogado até alcançar os 48 números vendidos.</p>
             <br>
-            <p><strong>🎯 Números disponíveis:</strong> 65 números (01 a 65)</p>
+            <p><strong>🎯 Números disponíveis:</strong> 66 números (01 a 66)</p>
             <p><strong>💳 Pagamento seguro:</strong> Feito através da plataforma InfinitePay, com garantia de estorno e suporte oficial.</p>
         </div>
 
@@ -232,7 +258,7 @@
                 <li>🔹 Valor: R$ 10,00 por número</li>
                 <li>🔹 Guarde o comprovante de pagamento</li>
                 <li>🔹 Envie o comprovante pelo WhatsApp para confirmar ✅</li>
-                <li>🔹 Acompanhe tudo pelo grupo oficial!</li>
+                <li>🔹 Acompanhe tudo pelo grupo oficial — é lá que acontece o sorteio!</li>
             </ul>
         </div>
 
@@ -242,13 +268,28 @@
             <div class="grid" id="numeros">
                 <script>
                     const container = document.getElementById('numeros');
-                    for (let i = 1; i <= 65; i++) {
+                    for (let i = 1; i <= 66; i++) {
                         const num = i.toString().padStart(2, '0');
-                        container.innerHTML += `<div class="number">${num}</div>`;
+                        
+                        // Número 59 marcado como VENDIDO
+                        if (i === 59) {
+                            container.innerHTML += `
+                                <div class="number vendido">
+                                    ${num}
+                                    <span class="vendido-tag">✓ VENDIDO</span>
+                                </div>`;
+                        } else {
+                            container.innerHTML += `<div class="number disponivel">${num}</div>`;
+                        }
                     }
                 </script>
             </div>
         </div>
+
+        <!-- 📝 COMO MARCAR OUTRO NÚMERO COMO VENDIDO:
+        Basta trocar o número na linha abaixo:
+        if (i === 59) → troque 59 pelo número vendido, exemplo: if (i === 05 || i === 12 || i === 33)
+        -->
 
         <!-- Botões -->
         <div class="actions">
@@ -259,12 +300,12 @@
                 📱 WhatsApp — Organizador da Rifa<br>(31) 98585-4150
             </a>
             <a href="https://chat.whatsapp.com/GdvVTs31oo1EXwExSQ3Ey2" target="_blank" class="btn btn-group">
-                👥 Entrar no Grupo Oficial
+                👥 Entrar no Grupo Oficial — Acompanhe o sorteio!
             </a>
         </div>
 
         <footer>
-            <p>© 2026 • Rifa Lattafa Tharwah Gold • Boa sorte! 🍀</p>
+            <p>© 2026 • Rifa Lattafa Tharwah Gold • Sorteio realizado no Grupo Oficial do WhatsApp • Boa sorte! 🍀</p>
         </footer>
     </div>
 </body>
