@@ -112,8 +112,14 @@
 
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(65px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(85px, 1fr));
             gap: 12px;
+        }
+
+        .number-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         .number {
@@ -121,19 +127,18 @@
             color: #8b6508;
             font-weight: bold;
             display: flex;
-            flex-direction: column;
             align-items: center;
             justify-content: center;
-            height: 70px;
-            border-radius: 10px;
-            font-size: 1rem;
+            height: 60px;
+            width: 100%;
+            border-radius: 10px 10px 0 0;
+            font-size: 1.1rem;
             transition: all 0.3s ease;
         }
 
         .number.disponivel:hover {
             background: #b8860b;
             color: #fff;
-            transform: scale(1.08);
             cursor: pointer;
         }
 
@@ -141,15 +146,26 @@
             background: linear-gradient(135deg, #4ade80, #22c55e);
             color: #fff;
             cursor: not-allowed;
-            opacity: 0.9;
         }
 
-        .vendido-tag {
-            font-size: 0.7rem;
-            background: rgba(0,0,0,0.15);
-            padding: 2px 6px;
-            border-radius: 4px;
-            margin-top: 3px;
+        .name-space {
+            background: #f9f6eb;
+            color: #555;
+            font-size: 0.75rem;
+            text-align: center;
+            padding: 4px 6px;
+            width: 100%;
+            border-radius: 0 0 10px 10px;
+            min-height: 26px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .name-space.vendido {
+            background: #dcfce7;
+            color: #166534;
+            font-weight: 500;
         }
 
         .actions {
@@ -257,50 +273,67 @@
                 <li>🔹 Clique em "Escolher Número e Pagar"</li>
                 <li>🔹 Valor: R$ 10,00 por número</li>
                 <li>🔹 Guarde o comprovante de pagamento</li>
-                <li>🔹 Envie o comprovante pelo WhatsApp para confirmar ✅</li>
-                <li>🔹 Acompanhe tudo pelo grupo oficial — é lá que acontece o sorteio!</li>
+                <li>🔹 Clique no botão abaixo para enviar o comprovante pelo WhatsApp ✅</li>
+                <li>🔹 Clique no botão abaixo para entrar no grupo e acompanhar tudo!</li>
             </ul>
         </div>
 
-        <!-- Números -->
+        <!-- Números com Espaço para Nomes -->
         <div class="numbers-grid">
             <h3>🔢 Números Disponíveis</h3>
             <div class="grid" id="numeros">
                 <script>
                     const container = document.getElementById('numeros');
+                    
+                    // 📝 COLOCAR NOMES AQUI — exemplo: nomesVendidos[59] = "Tia Rose"
+                    const nomesVendidos = {
+                        59: "Tia Rose"
+                        // Adicione mais nomes assim: 05: "Maria", 12: "João", 33: "Ana",
+                    };
+
                     for (let i = 1; i <= 66; i++) {
                         const num = i.toString().padStart(2, '0');
+                        const nome = nomesVendidos[i] || "";
+                        const isVendido = !!nomesVendidos[i];
                         
-                        // Número 59 marcado como VENDIDO
-                        if (i === 59) {
-                            container.innerHTML += `
-                                <div class="number vendido">
+                        container.innerHTML += `
+                            <div class="number-card">
+                                <div class="number ${isVendido ? 'vendido' : 'disponivel'}">
                                     ${num}
-                                    <span class="vendido-tag">✓ VENDIDO</span>
-                                </div>`;
-                        } else {
-                            container.innerHTML += `<div class="number disponivel">${num}</div>`;
-                        }
+                                </div>
+                                <div class="name-space ${isVendido ? 'vendido' : ''}">
+                                    ${nome || "&nbsp;"}
+                                </div>
+                            </div>
+                        `;
                     }
                 </script>
             </div>
         </div>
 
-        <!-- 📝 COMO MARCAR OUTRO NÚMERO COMO VENDIDO:
-        Basta trocar o número na linha abaixo:
-        if (i === 59) → troque 59 pelo número vendido, exemplo: if (i === 05 || i === 12 || i === 33)
+        <!-- 📝 COMO ADICIONAR MAIS NOMES:
+        Na linha "const nomesVendidos = {" simplesmente adicione:
+        
+        const nomesVendidos = {
+            59: "Tia Rose",
+            03: "Carlos",
+            15: "Mariana",
+            42: "João Paulo"
+        };
+        
+        Salve o arquivo e abra de novo — pronto! ✅
         -->
 
         <!-- Botões -->
         <div class="actions">
             <a href="https://loja.infinitepay.io/anderson-jose-x38/stp5204-perfume-lattafa-pride-tharwah-gold-100" target="_blank" class="btn btn-pagamento">
-                💰 Escolher Número e Pagar
+                💰 Clique aqui para escolher seu número e pagar
             </a>
             <a href="https://wa.me/5531985854150" target="_blank" class="btn btn-whatsapp">
-                📱 WhatsApp — Organizador da Rifa<br>(31) 98585-4150
+                📱 Clique aqui para enviar seu comprovante
             </a>
             <a href="https://chat.whatsapp.com/GdvVTs31oo1EXwExSQ3Ey2" target="_blank" class="btn btn-group">
-                👥 Entrar no Grupo Oficial — Acompanhe o sorteio!
+                👥 Clique aqui para entrar no grupo oficial
             </a>
         </div>
 
