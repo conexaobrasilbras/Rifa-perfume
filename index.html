@@ -1,334 +1,255 @@
 <!DOCTYPE html>
-<html lang="pt‑BR">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF‑8">
-    <meta name="viewport" content="width=device‑width, initial‑scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lattafa Pride Tharwah Gold — Rifa 💛</title>
+    <!-- Tailwind CSS para design moderno, responsivo e elegante -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box‑sizing: border‑box;
-            font‑family: 'Segoe UI', Tahoma, Geneva, Verdana, sans‑serif;
-        }
-
         body {
-            background: linear‑gradient(135deg, #fdfbfb 0%, #f8e9a1 100%);
-            min‑height: 100vh;
-            padding: 20px;
-        }
-
-        .container {
-            max‑width: 900px;
-            margin: 0 auto;
-        }
-
-        header {
-            text‑align: center;
-            padding: 40px 20px;
-        }
-
-        header h1 {
-            color: #b8860b;
-            font‑size: 2rem;
-            margin‑bottom: 10px;
-        }
-
-        header p {
-            color: #555;
-            font‑size: 1.1rem;
-        }
-
-        .product‑card {
-            background: #fff;
-            border‑radius: 20px;
-            padding: 40px 30px;
-            margin‑bottom: 30px;
-            box‑shadow: 0 8px 30px rgba(184, 134, 11, 0.15);
-            text‑align: center;
-        }
-
-        .product‑card h2 {
-            color: #b8860b;
-            font‑size: 1.6rem;
-            margin‑bottom: 10px;
-        }
-
-        .product‑card p {
-            color: #666;
-            font‑size: 1.1rem;
-            line‑height: 1.6;
-        }
-
-        .price‑tag {
-            font‑size: 2rem;
-            color: #b8860b;
-            font‑weight: bold;
-            margin: 20px 0 10px;
-        }
-
-        .info‑box {
-            background: #fff9e6;
-            border‑left: 5px solid #b8860b;
-            border‑radius: 12px;
-            padding: 25px;
-            margin‑bottom: 30px;
-        }
-
-        .info‑box h3 {
-            color: #b8860b;
-            margin‑bottom: 15px;
-            font‑size: 1.2rem;
-        }
-
-        .info‑box ul {
-            list‑style: none;
-            color: #444;
-        }
-
-        .info‑box li {
-            padding: 8px 0;
-            border‑bottom: 1px dashed #f0d896;
-        }
-
-        .info‑box li:last‑child {
-            border‑bottom: none;
-        }
-
-        .numbers‑grid {
-            background: #fff;
-            border‑radius: 20px;
-            padding: 30px;
-            margin‑bottom: 30px;
-            box‑shadow: 0 8px 30px rgba(184, 134, 11, 0.15);
-        }
-
-        .numbers‑grid h3 {
-            text‑align: center;
-            color: #b8860b;
-            margin‑bottom: 20px;
-            font‑size: 1.3rem;
-        }
-
-        .grid {
-            display: grid;
-            grid‑template‑columns: repeat(auto‑fill, minmax(85px, 1fr));
-            gap: 12px;
-        }
-
-        .number‑card {
-            display: flex;
-            flex‑direction: column;
-            align‑items: center;
-        }
-
-        .number‑link {
-            width: 100%;
-            text‑decoration: none;
-        }
-
-        .number {
-            background: linear‑gradient(135deg, #f8e9a1, #f0d896);
-            color: #8b6508;
-            font‑weight: bold;
-            display: flex;
-            align‑items: center;
-            justify‑content: center;
-            height: 60px;
-            width: 100%;
-            border‑radius: 10px 10px 0 0;
-            font‑size: 1.1rem;
-            transition: all 0.3s ease;
-        }
-
-        .number.disponivel:hover {
-            background: #b8860b;
-            color: #fff;
-            cursor: pointer;
-            transform: scale(1.05);
-        }
-
-        .number.vendido {
-            background: linear‑gradient(135deg, #4ade80, #22c55e);
-            color: #fff;
-            cursor: not‑allowed;
-        }
-
-        .name‑space {
-            background: #f9f6eb;
-            color: #555;
-            font‑size: 0.75rem;
-            text‑align: center;
-            padding: 4px 6px;
-            width: 100%;
-            border‑radius: 0 0 10px 10px;
-            min‑height: 26px;
-            white‑space: nowrap;
-            overflow: hidden;
-            text‑overflow: ellipsis;
-        }
-
-        .name‑space.vendido {
-            background: #dcfce7;
-            color: #166534;
-            font‑weight: 500;
-        }
-
-        .actions {
-            display: flex;
-            flex‑direction: column;
-            gap: 15px;
-            margin‑bottom: 30px;
-        }
-
-        .btn {
-            padding: 18px 25px;
-            border‑radius: 12px;
-            font‑size: 1.1rem;
-            font‑weight: bold;
-            text‑decoration: none;
-            text‑align: center;
-            transition: all 0.3s ease;
-        }
-
-        .btn‑pagamento {
-            background: linear‑gradient(135deg, #b8860b, #d4a017);
-            color: #fff;
-        }
-
-        .btn‑pagamento:hover {
-            background: #966c00;
-        }
-
-        .btn‑whatsapp {
-            background: #25D366;
-            color: #fff;
-        }
-
-        .btn‑whatsapp:hover {
-            background: #1da851;
-        }
-
-        .observation {
-            background: #fff3cd;
-            border: 2px solid #ffc107;
-            border‑radius: 12px;
-            padding: 25px;
-            margin‑bottom: 30px;
-        }
-
-        .observation h3 {
-            color: #856404;
-            margin‑bottom: 12px;
-        }
-
-        .observation p {
-            color: #856404;
-            line‑height: 1.7;
-            font‑size: 0.98rem;
-        }
-
-        footer {
-            text‑align: center;
-            padding: 20px;
-            color: #777;
-            font‑size: 0.9rem;
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #fdfbfb 0%, #f8e9a1 100%);
         }
     </style>
 </head>
-<body>
-    <div class="container">
-        <header>
-            <h1>✨ Lattafa Pride Tharwah Gold ✨</h1>
-            <p>Concorra a este maravilhoso perfume importado!</p>
+<body class="min-h-screen py-6 px-4 sm:px-6 text-gray-800 antialiased">
+
+    <div class="max-w-4xl mx-auto space-y-6">
+        <!-- Cabeçalho -->
+        <header class="text-center py-6 sm:py-8">
+            <span class="inline-block bg-amber-100 text-amber-800 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider mb-3 shadow-sm">
+                Edição Especial • 100ml
+            </span>
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-amber-700 tracking-tight mb-2">
+                ✨ Lattafa Pride Tharwah Gold ✨
+            </h1>
+            <p class="text-gray-600 text-base sm:text-lg max-w-xl mx-auto">
+                Concorra a este maravilhoso perfume árabe importado, original e lacrado!
+            </p>
         </header>
 
-        <div class="product‑card">
-            <h2>Lattafa Pride Tharwah Gold — 100ml</h2>
-            <p>Eau de Parfum • Original e Lacrado</p>
-            <div class="price‑tag">🎟️ Apenas R$ 10,00 por número</div>
+        <!-- Cartão Principal do Produto e Progresso -->
+        <div class="bg-white rounded-3xl p-6 sm:p-10 shadow-xl shadow-amber-900/10 text-center border border-amber-100">
+            <h2 class="text-xl sm:text-2xl font-bold text-amber-800 mb-1">
+                Lattafa Pride Tharwah Gold — 100ml
+            </h2>
+            <p class="text-gray-500 text-sm sm:text-base mb-5">
+                Eau de Parfum • Original e Lacrado
+            </p>
+            
+            <div class="inline-flex items-center justify-center bg-amber-50 border border-amber-200 rounded-2xl px-6 py-3 mb-6">
+                <span class="text-2xl sm:text-3xl font-extrabold text-amber-700">
+                    🎟️ Apenas R$ 10,00 <span class="text-sm font-medium text-amber-600">por número</span>
+                </span>
+            </div>
+
+            <!-- Barra de Progresso de Vendas -->
+            <div class="max-w-md mx-auto bg-gray-50 rounded-2xl p-4 border border-gray-100">
+                <div class="flex justify-between text-xs sm:text-sm font-semibold mb-2">
+                    <span class="text-gray-600" id="status-vendas">Carregando status...</span>
+                    <span class="text-amber-700" id="porcentagem-vendas">0%</span>
+                </div>
+                <div class="w-full bg-gray-200 rounded-full h-3 overflow-hidden">
+                    <div id="barra-progresso" class="bg-gradient-to-r from-amber-500 to-yellow-500 h-3 rounded-full transition-all duration-700" style="width: 0%"></div>
+                </div>
+                <p class="text-xs text-gray-500 mt-2">
+                    Meta mínima para realização na data prevista: <strong>48 números</strong>
+                </p>
+            </div>
         </div>
 
-        <div class="observation">
-            <h3>📌 INFORMAÇÕES IMPORTANTES</h3>
+        <!-- Informações Importantes -->
+        <div class="bg-amber-50/90 border-l-4 border-amber-500 rounded-2xl p-6 shadow-sm space-y-3 text-sm sm:text-base text-amber-950">
+            <h3 class="font-bold text-amber-800 text-lg flex items-center gap-2 mb-3">
+                📌 INFORMAÇÕES IMPORTANTES
+            </h3>
             <p><strong>📅 Sorteio:</strong> 12 de dezembro de 2026</p>
-            <br>
             <p><strong>🎯 Onde será o sorteio:</strong> O sorteio será realizado oficialmente no nosso Grupo Oficial do WhatsApp!</p>
-            <br>
             <p><strong>⚠️ Mínimo de vendas:</strong> É necessário vender no mínimo 48 números para realizar o sorteio na data prevista. Se não atingir a meta até 12/12/2026, o sorteio será prorrogado até alcançar os 48 números vendidos.</p>
-            <br>
             <p><strong>📝 Após o pagamento:</strong> Envie o comprovante de pagamento no Grupo Oficial do WhatsApp informando o número escolhido. Assim que confirmado, seu nome será vinculado ao número!</p>
-            <br>
             <p><strong>🎯 Números disponíveis:</strong> 66 números (01 a 66)</p>
             <p><strong>💳 Pagamento seguro:</strong> Feito através da plataforma InfinitePay, com garantia de estorno e suporte oficial.</p>
         </div>
 
-        <div class="info‑box">
-            <h3>📋 Como Participar</h3>
-            <ul>
-                <li>🔹 Clique em cima de qualquer número disponível</li>
-                <li>🔹 Valor: R$ 10,00 por número</li>
-                <li>🔹 Conclua o pagamento na plataforma InfinitePay</li>
-                <li>🔹 Guarde o comprovante ✅</li>
-                <li>🔹 Entre no Grupo Oficial e envie o comprovante informando seu número escolhido!</li>
+        <!-- Como Participar -->
+        <div class="bg-white rounded-2xl p-6 shadow-md border border-amber-100">
+            <h3 class="font-bold text-amber-800 text-lg mb-4">📋 Como Participar</h3>
+            <ul class="space-y-2.5 text-sm sm:text-base text-gray-700">
+                <li class="flex items-start gap-2 pb-2 border-b border-dashed border-amber-200">
+                    <span>🔹</span> <span>Clique em cima de qualquer número disponível na grade abaixo</span>
+                </li>
+                <li class="flex items-start gap-2 pb-2 border-b border-dashed border-amber-200">
+                    <span>🔹</span> <span>Valor: <strong>R$ 10,00</strong> por número</span>
+                </li>
+                <li class="flex items-start gap-2 pb-2 border-b border-dashed border-amber-200">
+                    <span>🔹</span> <span>Conclua o pagamento na plataforma InfinitePay</span>
+                </li>
+                <li class="flex items-start gap-2 pb-2 border-b border-dashed border-amber-200">
+                    <span>🔹</span> <span>Guarde o comprovante ✅</span>
+                </li>
+                <li class="flex items-start gap-2">
+                    <span>🔹</span> <span>Entre no Grupo Oficial e envie o comprovante informando seu número escolhido!</span>
+                </li>
             </ul>
         </div>
 
-        <div class="numbers‑grid">
-            <h3>🔢 Números Disponíveis — Clique no número desejado!</h3>
-            <div class="grid" id="numeros">
-                <script>
-                    const container = document.getElementById('numeros');
-                    const linkPagamento = "https://loja.infinitepay.io/anderson‑jose‑x38/stp5204‑perfume‑lattafa‑pride‑tharwah‑gold‑100";
-                    
-                    const nomesVendidos = {
-                        02: "Nanda",
-                        08: "Fernando",
-                        13: "Flávia",
-                        22: "Naiara",
-                        46: "Kátia",
-                        59: "Tia Rose"
-                    };
+        <!-- Grade de Números -->
+        <div class="bg-white rounded-3xl p-6 sm:p-8 shadow-xl shadow-amber-900/10 border border-amber-100">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
+                <div>
+                    <h3 class="text-lg sm:text-xl font-bold text-amber-800">
+                        🔢 Escolha seu Número
+                    </h3>
+                    <p class="text-xs sm:text-sm text-gray-500">Clique em um número dourado para ir ao pagamento</p>
+                </div>
 
-                    for (let i = 1; i <= 66; i++) {
-                        const num = i.toString().padStart(2, '0');
-                        const nome = nomesVendidos[i] || "";
-                        const isVendido = !!nomesVendidos[i];
-                        
-                        if (isVendido) {
-                            container.innerHTML += `
-                                <div class="number‑card">
-                                    <div class="number vendido">${num}</div>
-                                    <div class="name‑space vendido">${nome}</div>
-                                </div>
-                            `;
-                        } else {
-                            container.innerHTML += `
-                                <div class="number‑card">
-                                    <a href="${linkPagamento}" target="_blank" class="number‑link">
-                                        <div class="number disponivel">${num}</div>
-                                    </a>
-                                    <div class="name‑space">&nbsp;</div>
-                                </div>
-                            `;
-                        }
-                    }
-                </script>
+                <!-- Filtros Rápidos -->
+                <div class="flex gap-2 bg-gray-100 p-1 rounded-xl self-start sm:self-auto">
+                    <button onclick="filtrarNumeros('todos')" id="btn-todos" class="px-3 py-1.5 rounded-lg text-xs font-semibold bg-amber-600 text-white shadow-sm transition">
+                        Todos (66)
+                    </button>
+                    <button onclick="filtrarNumeros('disponiveis')" id="btn-disponiveis" class="px-3 py-1.5 rounded-lg text-xs font-semibold text-gray-600 hover:text-gray-900 transition">
+                        Disponíveis
+                    </button>
+                    <button onclick="filtrarNumeros('vendidos')" id="btn-vendidos" class="px-3 py-1.5 rounded-lg text-xs font-semibold text-gray-600 hover:text-gray-900 transition">
+                        Vendidos
+                    </button>
+                </div>
             </div>
+
+            <!-- Legenda -->
+            <div class="flex items-center gap-4 text-xs text-gray-600 mb-5">
+                <div class="flex items-center gap-1.5">
+                    <span class="w-3.5 h-3.5 rounded bg-amber-200 border border-amber-400 inline-block"></span>
+                    <span>Disponível</span>
+                </div>
+                <div class="flex items-center gap-1.5">
+                    <span class="w-3.5 h-3.5 rounded bg-emerald-500 inline-block"></span>
+                    <span>Vendido / Reservado</span>
+                </div>
+            </div>
+
+            <!-- Grid Renderizado via JS -->
+            <div class="grid grid-cols-3 sm:grid-cols-6 md:grid-cols-8 gap-3" id="numeros"></div>
         </div>
 
-        <div class="actions">
-            <a href="https://loja.infinitepay.io/anderson‑jose‑x38/stp5204‑perfume‑lattafa‑pride‑tharwah‑gold‑100" target="_blank" class="btn btn‑pagamento">
+        <!-- Botões de Ação -->
+        <div class="flex flex-col gap-4">
+            <a href="https://loja.infinitepay.io/anderson-jose-x38/stp5204-perfume-lattafa-pride-tharwah-gold-100" target="_blank" rel="noopener noreferrer" 
+               class="w-full py-4 px-6 rounded-2xl bg-gradient-to-r from-amber-600 to-yellow-600 hover:from-amber-700 hover:to-yellow-700 text-white font-bold text-center text-base sm:text-lg shadow-lg shadow-amber-600/30 transition transform hover:-translate-y-0.5">
                 💰 Clique aqui para escolher seu número e pagar
             </a>
-            <a href="https://chat.whatsapp.com/GdvVTs31oo1EXwExSQ3Ey2" target="_blank" class="btn btn‑whatsapp">
+            <a href="https://chat.whatsapp.com/GdvVTs31oo1EXwExSQ3Ey2" target="_blank" rel="noopener noreferrer" 
+               class="w-full py-4 px-6 rounded-2xl bg-[#25D366] hover:bg-[#1da851] text-white font-bold text-center text-base sm:text-lg shadow-lg shadow-emerald-600/20 transition transform hover:-translate-y-0.5">
                 💬 Clique aqui para entrar no grupo e enviar o comprovante
             </a>
         </div>
 
-        <footer>
+        <!-- Rodapé -->
+        <footer class="text-center py-6 text-gray-500 text-xs sm:text-sm">
             <p>© 2026 • Rifa Lattafa Tharwah Gold • Sorteio realizado no Grupo Oficial do WhatsApp • Boa sorte! 🍀</p>
         </footer>
     </div>
+
+    <script>
+        // Configuração da Rifa
+        const totalNumeros = 66;
+        const linkPagamento = "https://loja.infinitepay.io/anderson-jose-x38/stp5204-perfume-lattafa-pride-tharwah-gold-100";
+        
+        // Números já vendidos (use chaves numéricas simples sem zero à esquerda)
+        const nomesVendidos = {
+            2: "Nanda",
+            8: "Fernando",
+            13: "Flávia",
+            22: "Naiara",
+            46: "Kátia",
+            59: "Tia Rose"
+        };
+
+        let filtroAtual = 'todos';
+
+        // Atualiza barra de progresso e contadores
+        function atualizarEstatisticas() {
+            const qtdVendidos = Object.keys(nomesVendidos).length;
+            const qtdDisponiveis = totalNumeros - qtdVendidos;
+            const porcentagem = Math.round((qtdVendidos / totalNumeros) * 100);
+
+            document.getElementById('status-vendas').textContent = `${qtdVendidos} vendidos • ${qtdDisponiveis} disponíveis`;
+            document.getElementById('porcentagem-vendas').textContent = `${porcentagem}%`;
+            document.getElementById('barra-progresso').style.width = `${porcentagem}%`;
+
+            // Atualiza rótulos dos botões de filtro
+            document.getElementById('btn-todos').textContent = `Todos (${totalNumeros})`;
+            document.getElementById('btn-disponiveis').textContent = `Disponíveis (${qtdDisponiveis})`;
+            document.getElementById('btn-vendidos').textContent = `Vendidos (${qtdVendidos})`;
+        }
+
+        // Renderiza a grade de números
+        function renderizarNumeros() {
+            const container = document.getElementById('numeros');
+            container.innerHTML = '';
+
+            for (let i = 1; i <= totalNumeros; i++) {
+                const numFormatado = i.toString().padStart(2, '0');
+                const nomeComprador = nomesVendidos[i] || "";
+                const isVendido = Boolean(nomesVendidos[i]);
+
+                // Aplica filtro selecionado
+                if (filtroAtual === 'disponiveis' && isVendido) continue;
+                if (filtroAtual === 'vendidos' && !isVendido) continue;
+
+                const card = document.createElement('div');
+                card.className = 'flex flex-col items-center rounded-xl overflow-hidden shadow-sm border transition-transform duration-200 ' + 
+                                 (isVendido ? 'border-emerald-200' : 'border-amber-200 hover:scale-105 hover:shadow-md');
+
+                if (isVendido) {
+                    card.innerHTML = `
+                        <div class="w-full h-12 bg-gradient-to-br from-emerald-400 to-emerald-600 text-white font-bold text-lg flex items-center justify-center cursor-not-allowed select-none" title="Número ${numFormatado} já vendido para ${nomeComprador}">
+                            ${numFormatado}
+                        </div>
+                        <div class="w-full bg-emerald-50 text-emerald-800 text-xs font-semibold text-center py-1 px-1 truncate">
+                            ${nomeComprador}
+                        </div>
+                    `;
+                } else {
+                    card.innerHTML = `
+                        <a href="${linkPagamento}" target="_blank" rel="noopener noreferrer" class="w-full block group" title="Clique para reservar o número ${numFormatado}">
+                            <div class="w-full h-12 bg-gradient-to-br from-amber-100 to-amber-200 group-hover:from-amber-500 group-hover:to-amber-600 text-amber-900 group-hover:text-white font-bold text-lg flex items-center justify-center transition-colors">
+                                ${numFormatado}
+                            </div>
+                            <div class="w-full bg-amber-50/70 text-amber-700/70 text-[11px] font-medium text-center py-1 px-1">
+                                Livre
+                            </div>
+                        </a>
+                    `;
+                }
+
+                container.appendChild(card);
+            }
+        }
+
+        // Alterna filtros visuais
+        function filtrarNumeros(filtro) {
+            filtroAtual = filtro;
+            const botoes = ['todos', 'disponiveis', 'vendidos'];
+            
+            botoes.forEach(b => {
+                const el = document.getElementById(`btn-${b}`);
+                if (b === filtro) {
+                    el.className = 'px-3 py-1.5 rounded-lg text-xs font-semibold bg-amber-600 text-white shadow-sm transition';
+                } else {
+                    el.className = 'px-3 py-1.5 rounded-lg text-xs font-semibold text-gray-600 hover:text-gray-900 transition';
+                }
+            });
+
+            renderizarNumeros();
+        }
+
+        // Inicialização
+        atualizarEstatisticas();
+        renderizarNumeros();
+    </script>
 </body>
 </html>
