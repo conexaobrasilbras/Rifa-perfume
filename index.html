@@ -18,7 +18,7 @@
 
     <div class="max-w-4xl mx-auto space-y-6">
         <!-- Cabeçalho -->
-        <header class="text-center py-6 sm:py-8">
+        <header class="text-center py-4 sm:py-6">
             <span class="inline-block bg-amber-100 text-amber-800 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider mb-3 shadow-sm">
                 Edição Especial • 100ml
             </span>
@@ -30,13 +30,36 @@
             </p>
         </header>
 
-        <!-- Cartão Principal do Produto e Progresso -->
+        <!-- Cartão Principal do Produto, Imagem e Progresso -->
         <div class="bg-white rounded-3xl p-6 sm:p-10 shadow-xl shadow-amber-900/10 text-center border border-amber-100">
-            <h2 class="text-xl sm:text-2xl font-bold text-amber-800 mb-1">
+            
+            <!-- Espaço da Imagem do Perfume (Repositório Git) -->
+            <!-- INSTRUÇÃO: Salve a imagem no seu repositório Git (ex: pasta 'img/perfume.jpg' ou na raiz como 'perfume.jpg') e ajuste o atributo 'src' abaixo -->
+            <div class="relative max-w-xs mx-auto mb-6 group">
+                <div class="aspect-square w-full rounded-2xl overflow-hidden bg-gradient-to-b from-amber-50 to-amber-100/60 border-2 border-amber-200/80 shadow-inner flex items-center justify-center relative">
+                    <img 
+                        src="./perfume.jpg" 
+                        alt="Perfume Lattafa Pride Tharwah Gold 100ml" 
+                        class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                        onerror="this.style.display='none'; document.getElementById('placeholder-perfume').classList.remove('hidden');"
+                    >
+                    <!-- Aviso visual que aparece apenas enquanto você ainda não subiu a foto no Git -->
+                    <div id="placeholder-perfume" class="hidden flex-col items-center justify-center p-6 text-amber-800/70">
+                        <span class="text-4xl mb-2">📸</span>
+                        <p class="text-xs font-bold uppercase tracking-wider">Espaço para Foto do Perfume</p>
+                        <p class="text-[11px] mt-1 text-amber-700/80">Suba a imagem como <code class="bg-amber-200/70 px-1.5 py-0.5 rounded font-mono">perfume.jpg</code> no repositório Git</p>
+                    </div>
+                </div>
+                <span class="absolute -bottom-3 left-1/2 -translate-x-1/2 bg-gradient-to-r from-amber-600 to-yellow-600 text-white text-[11px] font-bold px-3.5 py-1 rounded-full shadow-md whitespace-nowrap">
+                    ✨ 100% Original e Lacrado
+                </span>
+            </div>
+
+            <h2 class="text-xl sm:text-2xl font-bold text-amber-800 mb-1 mt-2">
                 Lattafa Pride Tharwah Gold — 100ml
             </h2>
             <p class="text-gray-500 text-sm sm:text-base mb-5">
-                Eau de Parfum • Original e Lacrado
+                Eau de Parfum • Fragrância Árabe Sofisticada
             </p>
             
             <div class="inline-flex items-center justify-center bg-amber-50 border border-amber-200 rounded-2xl px-6 py-3 mb-6">
@@ -162,7 +185,10 @@
         const nomesVendidos = {
             2: "Nanda",
             8: "Fernando",
+            12: "Alexandre",
             13: "Flávia",
+            16: "Adilson",
+            21: "Alexandre",
             22: "Naiara",
             46: "Kátia",
             59: "Tia Rose"
